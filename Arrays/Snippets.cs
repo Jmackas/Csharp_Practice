@@ -1,5 +1,30 @@
-// Assigning values to an array
-int[] arrayVar = { 1, 2, 3, 4, 5 };
+// Generic array variable is "arrayVar" for these examples.
 
-// Determining how long an array is 
-int lengthOfNumbers = numbers.Length;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Friend
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Assigning values to an array
+            int[] arrayVar = { 1, 2, 3, 4, 5 };
+
+            // Determining how long an array is 
+            int arrayVar = numbers.Length;
+
+            Console.WriteLine("Hello World!");
+        }
+
+
+    }
+}
+
+
+
