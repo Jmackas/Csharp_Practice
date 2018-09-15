@@ -29,7 +29,7 @@ namespace Friend
             // Assigning variables to an array
             int [] arrayVar = {99, 28, 22, 4};
 		
-            // Accessing items of an array 
+            // Accessing items of an array and displaying them
             foreach (int i in arrayVar)
             {
                 System.Console.Write(i + " ");
