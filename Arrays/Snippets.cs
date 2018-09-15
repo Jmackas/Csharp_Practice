@@ -13,13 +13,18 @@ namespace Friend
     {
         static void Main(string[] args)
         {
-            // Assigning values to an array
+            // Array declaration
+            int[] arrayVar;
+
+            // Assigning values to an array + declaration
             int[] arrayVar = { 1, 2, 3, 4, 5 };
 
             // Determining how long an array is 
             int arrayVar = numbers.Length;
 
-            Console.WriteLine("Hello World!");
+            
+
+
         }
 
 
