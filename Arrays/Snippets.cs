@@ -13,6 +13,10 @@ namespace Friend
     {
         static void Main(string[] args)
         {
+            /*
+            Array General
+             */
+
             // Array declaration
             int[] arrayVar;
 
@@ -31,6 +35,9 @@ namespace Friend
                 System.Console.Write(i + " ");
             }
 
+            /*
+            Arrays and classes
+             */
 
         }
 
