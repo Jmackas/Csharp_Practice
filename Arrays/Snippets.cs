@@ -41,6 +41,13 @@ namespace Friend
             // Initiation of an object within an array
             object[] arrayVar = new object[5]{1,1.1111,"Sharad",'c',2.79769313486232};
             
+            // Initiation of multiple objects within an array (invoice is the class)
+            var arrayVar = new[]
+            {
+                new Invoice(83,"Electric sander", 7, 57.98m),
+                new Invoice(24, "Power saw", 18, 99.99m),
+            };
+
             // Accessing items of an array and displaying them
             foreach (int i in arrayVar)
             {
