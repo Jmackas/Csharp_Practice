@@ -23,9 +23,13 @@ namespace Friend
             int arrayVar = numbers.Length;
 
             // Assigning variables to an array
-            int [] arrayVar = new int {99, 28, 22, 4};
-
-            
+            int [] arrayVar = {99, 28, 22, 4};
+		
+            // Accessing items of an array 
+            foreach (int i in arrayVar)
+            {
+                System.Console.Write(i + " ");
+            }
 
 
         }
