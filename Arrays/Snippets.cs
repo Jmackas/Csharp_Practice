@@ -38,6 +38,16 @@ namespace Friend
             /*
             Arrays and classes
              */
+            // Initiation of an object within an array
+            object[] arrayVar = new object[5]{1,1.1111,"Sharad",'c',2.79769313486232};
+            
+            // Accessing items of an array and displaying them
+            foreach (int i in arrayVar)
+            {
+                System.Console.Write(i + " ");
+            }
+
+
 
         }
 
