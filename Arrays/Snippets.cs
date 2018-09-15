@@ -19,8 +19,11 @@ namespace Friend
             // Assigning values to an array + declaration
             int[] arrayVar = { 1, 2, 3, 4, 5 };
 
-            // Determining how long an array is 
+            // Determining array length
             int arrayVar = numbers.Length;
+
+            // Assigning variables to an array
+            int [] arrayVar = new int {99, 28, 22, 4};
 
             
 
