@@ -1,0 +1,7 @@
+C:\Users\James\Google Drive\---Main---\University 2018\Application Development\Weeks\Week 11\Lab\Spam Scanner\Spam Scanner\bin\Debug\Spam Scanner.exe.config
+C:\Users\James\Google Drive\---Main---\University 2018\Application Development\Weeks\Week 11\Lab\Spam Scanner\Spam Scanner\bin\Debug\Spam Scanner.exe
+C:\Users\James\Google Drive\---Main---\University 2018\Application Development\Weeks\Week 11\Lab\Spam Scanner\Spam Scanner\bin\Debug\Spam Scanner.pdb
+C:\Users\James\Google Drive\---Main---\University 2018\Application Development\Weeks\Week 11\Lab\Spam Scanner\Spam Scanner\obj\Debug\Spam Scanner.csproj.CoreCompileInputs.cache
+C:\Users\James\Google Drive\---Main---\University 2018\Application Development\Weeks\Week 11\Lab\Spam Scanner\Spam Scanner\obj\Debug\Spam Scanner.exe
+C:\Users\James\Google Drive\---Main---\University 2018\Application Development\Weeks\Week 11\Lab\Spam Scanner\Spam Scanner\obj\Debug\Spam Scanner.pdb
+C:\Users\james\Google Drive\---Main---\University 2018\Application Development\Weeks\Week 11\Lab\Spam Scanner\Spam Scanner\obj\Debug\Spam Scanner.csprojAssemblyReference.cache
