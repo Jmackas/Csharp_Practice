@@ -26,6 +26,12 @@ namespace LabTest2
                 // Use a tab to indent each line of the file.
                 Console.WriteLine("\t" + line);
             }
+
+            /*========== Question 3 ==========*/
+            // WriteAllLines creates a file, writes a collection of strings to the file,
+            // and then closes the file.  You do NOT need to call Flush() or Close().
+            System.IO.File.WriteAllLines(@"purchasesoutput.dat", purchasesArray);
+
         }
     }
 }
