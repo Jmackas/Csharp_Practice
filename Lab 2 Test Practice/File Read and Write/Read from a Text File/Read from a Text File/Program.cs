@@ -16,7 +16,7 @@ namespace Read_from_a_Text_File
              * 
              * ======================*/
             // Read the file as one string.
-            string text = System.IO.File.ReadAllText(@"C:\Users\James\Documents\Github\Csharp_Practice\Lab 2 Test Practice\File Read and Write\Read from a Text File\file.txt");
+            string text = System.IO.File.ReadAllText(@"file.txt");
 
             // Display the file contents to the console. Variable text is a string.
             System.Console.WriteLine("Contents of WriteText.txt = {0}", text);
@@ -34,7 +34,7 @@ namespace Read_from_a_Text_File
              * ======================*/
 
             // Read each element into an array called "lines"
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\James\Documents\Github\Csharp_Practice\Lab 2 Test Practice\File Read and Write\Read from a Text File\file.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"file.txt");
 
             // Display the file contents by using a foreach loop.
             System.Console.Write("Contents of WriteLines2.txt = ");
