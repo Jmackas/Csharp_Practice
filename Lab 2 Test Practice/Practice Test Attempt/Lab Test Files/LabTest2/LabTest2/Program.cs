@@ -11,9 +11,6 @@ namespace LabTest2
         static void Main(string[] args)
         {
 
-
-
-
             /*========== Question 1 ==========*/
             // Read each element into an array called "lines"
             string[] purchasesArray = System.IO.File.ReadAllLines(@"purchases.txt");
@@ -31,6 +28,19 @@ namespace LabTest2
             // WriteAllLines creates a file, writes a collection of strings to the file,
             // and then closes the file.  You do NOT need to call Flush() or Close().
             System.IO.File.WriteAllLines(@"purchasesoutput.dat", purchasesArray);
+
+            /*========== Question 4 ==========*/
+            // Read each element into an array called "lines"
+            string[] purchasesDat = System.IO.File.ReadAllLines(@"purchasesOutput.dat");
+
+            // Display the file contents by using a foreach loop.
+            System.Console.Write("Contents of WriteLines2.txt = ");
+            foreach (string line in purchasesDat)
+            {
+                // Use a tab to indent each line of the file.
+                Console.WriteLine("\t" + line);
+            }
+
 
         }
     }
