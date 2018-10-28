@@ -13,7 +13,7 @@ namespace Example
         // Pronounce information on name assigned
         public virtual void GetInfo()
         {
-            Console.WriteLine("This is a" + Name);
+            Console.WriteLine("This is a " + Name);
         }
 
         public abstract double Area();
