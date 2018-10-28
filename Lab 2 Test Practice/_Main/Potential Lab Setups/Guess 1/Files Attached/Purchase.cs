@@ -64,12 +64,14 @@ namespace LabTest2
 
         public virtual double calculateCost()
         {
+
             return Quantity * CostPerUnit;
+            
         }
 
         public override string ToString()
         {
-            return string.Format("{0}: {1} \n{2}: {3}\n{4}: {5}\n{6}: {7}", "Supplier Code:", SupplierCode,
+            return string.Format("{0}: {1} \n{2}: {3}\n{4}: {5}\n{6}: {7}", "Supplier Code", SupplierCode,
             "Item Code", ItemCode, "Quantity", Quantity, "Cost Per Unit", CostPerUnit);
         }
 
