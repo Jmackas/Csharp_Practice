@@ -121,7 +121,7 @@ namespace LabTest2
                     Console.WriteLine("Supplier Code: " + purch.SupplierCode);
                     Console.WriteLine("Item Code:" + purch.ItemCode);
                     Console.WriteLine("Cost per Unit: $" + purch.CostPerUnit);
-                    Console.WriteLine("Quantity: $" + purch.Quantity);
+                    Console.WriteLine("Quantity:" + purch.Quantity);
                     Console.WriteLine("Cash Sale Discount: $" + purch.Discount);
                     //write total sales
                     Console.WriteLine("Sales Total: $" + saleRead);
