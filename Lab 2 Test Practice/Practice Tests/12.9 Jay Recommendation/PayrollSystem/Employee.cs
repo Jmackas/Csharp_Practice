@@ -2,25 +2,34 @@
 // Employee abstract base class.
 public abstract class Employee
 {
-   public string FirstName { get; }
-   public string LastName { get; }
-   public string SocialSecurityNumber { get; }
+    public string FirstName { get; }
+    public string LastName { get; }
+    public string SocialSecurityNumber { get; }
+    private string BirthDate { get; }
 
-   // three-parameter constructor
-   public Employee(string firstName, string lastName,
-      string socialSecurityNumber)
-   {
-      FirstName = firstName;
-      LastName = lastName;
-      SocialSecurityNumber = socialSecurityNumber;
-   }
+    // four-parameter constructor
+    public Employee(string firstName, string lastName,
+       string socialSecurityNumber, string birthDate)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        SocialSecurityNumber = socialSecurityNumber;
+        BirthDate = birthDate;
+    }
 
-   // return string representation of Employee object, using properties
-   public override string ToString() => $"{FirstName} {LastName}\n" +
-      $"social security number: {SocialSecurityNumber}";
+    public Employee(string firstName, string lastName, string socialSecurityNumber)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        SocialSecurityNumber = socialSecurityNumber;
+    }
 
-   // abstract method overridden by derived classes
-   public abstract decimal Earnings(); // no implementation here
+    // return string representation of Employee object, using properties
+    public override string ToString() => $"{FirstName} {LastName}\n" +
+       $"social security number: {SocialSecurityNumber}";
+
+    // abstract method overridden by derived classes
+    public abstract decimal Earnings(); // no implementation here
 }
 
 

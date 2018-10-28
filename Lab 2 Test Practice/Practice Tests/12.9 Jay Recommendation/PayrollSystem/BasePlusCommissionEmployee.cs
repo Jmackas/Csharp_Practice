@@ -9,9 +9,9 @@ public class BasePlusCommissionEmployee : CommissionEmployee
    // six-parameter constructor
    public BasePlusCommissionEmployee(string firstName, string lastName,
       string socialSecurityNumber, decimal grossSales,
-      decimal commissionRate, decimal baseSalary)
+      decimal commissionRate, decimal baseSalary, string birthDate)
       : base(firstName, lastName, socialSecurityNumber,
-           grossSales, commissionRate)
+           grossSales, commissionRate, birthDate)
    {
       BaseSalary = baseSalary; // validates base salary
    }
