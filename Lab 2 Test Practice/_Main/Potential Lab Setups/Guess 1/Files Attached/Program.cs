@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace LabTest2
 {
@@ -254,7 +255,11 @@ namespace LabTest2
                 Console.ReadLine();
             }
 
-
+            else
+            {
+                // Notice for people trying to enter something different
+                Console.WriteLine("You can only enter either 'cash' or 'credit'.");
+            }
 
         }
     }
