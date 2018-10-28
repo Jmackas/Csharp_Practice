@@ -12,9 +12,15 @@ namespace PayrollSystemTest
         private int Wage;
         private int Pieces;
 
-        public PieceWorker(int PiecesCreated, int Wage, int Pieces)
+
+        public PieceWorker(string firstName, string lastName, string socialSecurityNumber) : base(firstName, lastName, socialSecurityNumber)
         {
 
+        }
+
+        public override decimal Earnings()
+        {
+            throw new NotImplementedException();
         }
     }
 }
