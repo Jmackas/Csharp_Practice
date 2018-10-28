@@ -10,6 +10,7 @@ namespace LabTest2
     {
         static void Main(string[] args)
         {
+            
         }
     }
 }
