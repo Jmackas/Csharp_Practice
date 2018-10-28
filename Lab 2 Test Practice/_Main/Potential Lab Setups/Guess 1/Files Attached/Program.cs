@@ -16,7 +16,7 @@ namespace LabTest2
             char delim = ',';
             
             // Variables to determine net sales
-            double netSales;
+            double netSalesWrite;
             double netSalesRead;
 
             //Set file name
@@ -63,10 +63,10 @@ namespace LabTest2
                 }
 
                 //Calculate cost
-                netSales = purch.calculateCost();
+                netSalesWrite = purch.calculateCost();
                 
                 //write to file
-                writer.WriteLine(purch.SupplierCode + delim + purch.ItemCode + delim + purch.CostPerUnit + delim + purch.Quantity + delim + purch.Discount + delim + netSales);
+                writer.WriteLine(purch.SupplierCode + delim + purch.ItemCode + delim + purch.CostPerUnit + delim + purch.Quantity + delim + purch.Discount + delim + netSalesWrite);
 
                 // Closure of program
                 Console.WriteLine("Enter Another Supplier Code or END to quit: ");
@@ -129,8 +129,6 @@ namespace LabTest2
             inFile.Close();
 
             Console.ReadLine();
-
-
         }
     }
 }
