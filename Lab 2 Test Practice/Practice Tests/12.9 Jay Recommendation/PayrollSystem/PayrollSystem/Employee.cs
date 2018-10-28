@@ -5,14 +5,16 @@ public abstract class Employee
    public string FirstName { get; }
    public string LastName { get; }
    public string SocialSecurityNumber { get; }
+    private int BirthDate { get; }
 
    // three-parameter constructor
    public Employee(string firstName, string lastName,
-      string socialSecurityNumber)
+      string socialSecurityNumber, int birthDate)
    {
       FirstName = firstName;
       LastName = lastName;
       SocialSecurityNumber = socialSecurityNumber;
+        BirthDate = birthDate;
    }
 
    // return string representation of Employee object, using properties

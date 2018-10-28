@@ -10,8 +10,8 @@ public class CommissionEmployee : Employee
    // five-parameter constructor
    public CommissionEmployee(string firstName, string lastName,
       string socialSecurityNumber, decimal grossSales,
-      decimal commissionRate)
-      : base(firstName, lastName, socialSecurityNumber)
+      decimal commissionRate, int birthDate)
+      : base(firstName, lastName, socialSecurityNumber, birthDate)
    {
       GrossSales = grossSales; // validates gross sales
       CommissionRate = commissionRate; // validates commission rate
