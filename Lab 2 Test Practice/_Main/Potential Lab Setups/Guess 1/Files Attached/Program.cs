@@ -22,7 +22,7 @@ namespace LabTest2
             string Filename = "CashPurchases.txt";
 
             // Create new object using template
-            CashPurchase pur = new CashPurchase();
+            CashPurchase purch = new CashPurchase();
 
 
 
@@ -37,24 +37,24 @@ namespace LabTest2
             StreamWriter writer = new StreamWriter(outFile);
             Console.WriteLine("Cash Purchase transaction");
             Console.WriteLine("Enter Supplier Code or END to quit: ");
-            pur.SupplierCode = Console.ReadLine();
+            purch.SupplierCode = Console.ReadLine();
 
-            while (pur.SupplierCode != "END")
+            while (purch.SupplierCode != "END")
             {
                 //Console.WriteLine("Enter Supplier Code: ");
-                //pur.SupplierCode = Console.ReadLine();
+                //purch.SupplierCode = Console.ReadLine();
                 Console.WriteLine("Enter Item Code: ");
-                pur.ItemCode = Console.ReadLine();
+                purch.ItemCode = Console.ReadLine();
 
                 //read double
                 try
                 {
                     Console.WriteLine("Enter Cost Per Unit: ");
-                    pur.CostPerUnit = Convert.ToDouble(Console.ReadLine());
+                    purch.CostPerUnit = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Enter Quantity: ");
-                    pur.Quantity = Convert.ToDouble(Console.ReadLine());
+                    purch.Quantity = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Enter Cash Discount: ");
-                    pur.Discount = Convert.ToDouble(Console.ReadLine());
+                    purch.Discount = Convert.ToDouble(Console.ReadLine());
                 }
                 catch
                 {
@@ -63,13 +63,17 @@ namespace LabTest2
                     Environment.Exit(0);
                 }
                 //Calculate Discount
-                // discountRate = pur.Discount * 100;
-                //Calculate Cost
-                saleTotal = pur.calculateCost();
+                // discountRate = purch.Discount * 100;
+
+                //Calculate cost
+                saleTotal = purch.calculateCost();
+                
                 //write to file
-                writer.WriteLine(pur.SupplierCode + delim + pur.ItemCode + delim + pur.CostPerUnit + delim + pur.Quantity + delim + pur.Discount + delim + saleTotal);
+                writer.WriteLine(purch.SupplierCode + delim + purch.ItemCode + delim + purch.CostPerUnit + delim + purch.Quantity + delim + purch.Discount + delim + saleTotal);
+
+                // Closure of program
                 Console.WriteLine("Enter Another Supplier Code or END to quit: ");
-                pur.SupplierCode = Console.ReadLine();
+                purch.SupplierCode = Console.ReadLine();
             }
 
             writer.Close();
@@ -92,7 +96,6 @@ namespace LabTest2
              * Read from file
              * 
              * =========================*/
-            //Reading File and show on console
             Console.WriteLine("Reading from file");
 
             FileStream inFile = new FileStream(Filename, FileMode.Open, FileAccess.Read);
@@ -106,20 +109,20 @@ namespace LabTest2
                 while (input != null)
                 {
                     fields = input.Split(delim);
-                    pur.SupplierCode = fields[0];
-                    pur.ItemCode = fields[1];
-                    pur.CostPerUnit = Convert.ToDouble(fields[2]);
-                    pur.Quantity = Convert.ToDouble(fields[3]);
-                    pur.Discount = Convert.ToDouble(fields[4]);
+                    purch.SupplierCode = fields[0];
+                    purch.ItemCode = fields[1];
+                    purch.CostPerUnit = Convert.ToDouble(fields[2]);
+                    purch.Quantity = Convert.ToDouble(fields[3]);
+                    purch.Discount = Convert.ToDouble(fields[4]);
                     saleRead = Convert.ToDouble(fields[5]);
-                    
-                    
-                    //write objects to console
-                    Console.WriteLine("Supplier Code: " + pur.SupplierCode);
-                    Console.WriteLine("Item Code: $" + pur.ItemCode);
-                    Console.WriteLine("Cost per Unit: $" + pur.CostPerUnit);
-                    Console.WriteLine("Quantity: $" + pur.Quantity);
-                    Console.WriteLine("Cash Sale Discount: $" + pur.Discount);
+
+
+                    // Display on console
+                    Console.WriteLine("Supplier Code: " + purch.SupplierCode);
+                    Console.WriteLine("Item Code:" + purch.ItemCode);
+                    Console.WriteLine("Cost per Unit: $" + purch.CostPerUnit);
+                    Console.WriteLine("Quantity: $" + purch.Quantity);
+                    Console.WriteLine("Cash Sale Discount: $" + purch.Discount);
                     //write total sales
                     Console.WriteLine("Sales Total: $" + saleRead);
                     input = reader.ReadLine();
