@@ -54,6 +54,7 @@
     <Compile Include="PayrollSystemTest.cs" />
     <Compile Include="CommissionEmployee.cs" />
     <Compile Include="HourlyEmployee.cs" />
+    <Compile Include="PieceWorker.cs" />
     <Compile Include="SalariedEmployee.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
