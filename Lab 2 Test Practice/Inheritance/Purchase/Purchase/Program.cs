@@ -10,6 +10,7 @@ namespace Purchase
     {
         static void Main(string[] args)
         {
+
         }
     }
 }

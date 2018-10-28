@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace BentleyLabTest2Alt
 {
     [Serializable]
-    class CreditPurchase: Purchase
+    class CreditPurchase : Purchase
     {
         private double creditCharge;
 
