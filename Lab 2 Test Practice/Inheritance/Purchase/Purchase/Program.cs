@@ -17,6 +17,7 @@ namespace BentleyLabTest2Alt
             Console.WriteLine(purchase.SupplierCode);
             Console.WriteLine(purchase.ItemCode);
 
+            // Invocation of the calculation method
             Console.WriteLine(purchase.calculateCost());
 
         }
