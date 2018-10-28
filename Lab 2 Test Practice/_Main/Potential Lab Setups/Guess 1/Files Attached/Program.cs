@@ -14,9 +14,10 @@ namespace LabTest2
             //"CashPurchase"Writing Contents to file / default location
 
             char delim = ',';
-            double saleTotal = 0;
-            double saleRead = 0;
-            //double discountRate = 0;
+            
+            // Variables to determine net sales
+            double netSales;
+            double netSalesRead;
 
             //Set file name
             string Filename = "CashPurchases.txt";
@@ -62,10 +63,10 @@ namespace LabTest2
                 }
 
                 //Calculate cost
-                saleTotal = purch.calculateCost();
+                netSales = purch.calculateCost();
                 
                 //write to file
-                writer.WriteLine(purch.SupplierCode + delim + purch.ItemCode + delim + purch.CostPerUnit + delim + purch.Quantity + delim + purch.Discount + delim + saleTotal);
+                writer.WriteLine(purch.SupplierCode + delim + purch.ItemCode + delim + purch.CostPerUnit + delim + purch.Quantity + delim + purch.Discount + delim + netSales);
 
                 // Closure of program
                 Console.WriteLine("Enter Another Supplier Code or END to quit: ");
@@ -110,7 +111,7 @@ namespace LabTest2
                     purch.CostPerUnit = Convert.ToDouble(fields[2]);
                     purch.Quantity = Convert.ToDouble(fields[3]);
                     purch.Discount = Convert.ToDouble(fields[4]);
-                    saleRead = Convert.ToDouble(fields[5]);
+                    netSalesRead = Convert.ToDouble(fields[5]);
 
 
                     // Display on console
@@ -120,7 +121,7 @@ namespace LabTest2
                     Console.WriteLine("Quantity:" + purch.Quantity);
                     Console.WriteLine("Discount:" + purch.Discount);
                     //write total sales
-                    Console.WriteLine("Sales Total: $" + saleRead);
+                    Console.WriteLine("Sales Total: $" + netSalesRead);
                     input = reader.ReadLine();
                 }
             }
