@@ -235,7 +235,7 @@ namespace LabTest2
                         purch.ItemCode = fields[1];
                         purch.CostPerUnit = Convert.ToDouble(fields[2]);
                         purch.Quantity = Convert.ToDouble(fields[3]);
-                        netSalesRead = Convert.ToDouble(fields[5]);
+                        netSalesRead = Convert.ToDouble(fields[4]);
 
 
                         // Display on console
