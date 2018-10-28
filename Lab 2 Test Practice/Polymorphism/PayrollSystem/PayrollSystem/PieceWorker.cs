@@ -1,26 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayrollSystemTest
+class PieceWorker : Employee
 {
-    class PieceWorker : Employee 
+    private int Wage { get; set; }
+    private int Pieces { get; set; }
+
+
+    public PieceWorker(string firstName, string lastName, string socialSecurityNumber) : base(firstName, lastName, socialSecurityNumber)
     {
-        private int PiecesCreated;
-        private int Wage;
-        private int Pieces;
 
+    }
 
-        public PieceWorker(string firstName, string lastName, string socialSecurityNumber) : base(firstName, lastName, socialSecurityNumber)
-        {
+    public override decimal Earnings()
+    {
+        return Wage * Pieces;
+    }
 
-        }
-
-        public override decimal Earnings()
-        {
-            throw new NotImplementedException();
-        }
+    public override decimal Earnings()
+    {
+        throw new NotImplementedException();
     }
 }
