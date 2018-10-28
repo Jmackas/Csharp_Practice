@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CTILabTest2Dev
+namespace BentleyLabTest2Alt
 {
     [Serializable]
     class CashPurchase : Purchase
