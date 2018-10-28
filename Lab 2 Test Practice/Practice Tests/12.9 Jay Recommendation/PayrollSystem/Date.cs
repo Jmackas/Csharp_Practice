@@ -12,6 +12,13 @@ namespace PayrollSystem
         {
         }
 
+        public override string BirthDayRaise() {
+            if (Date = )
+            {
+                return base.Earnings 
+            }
+        }
+
         public override decimal Earnings()
         {
             throw new NotImplementedException();

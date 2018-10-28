@@ -30,6 +30,8 @@ public abstract class Employee
 
     // abstract method overridden by derived classes
     public abstract decimal Earnings(); // no implementation here
+
+    public abstract string BirthDayRaise();
 }
 
 

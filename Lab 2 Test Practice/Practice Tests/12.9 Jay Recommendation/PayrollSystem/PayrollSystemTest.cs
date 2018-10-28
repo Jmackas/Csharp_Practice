@@ -48,12 +48,17 @@ class PayrollSystemTest
             var employee = (BasePlusCommissionEmployee)currentEmployee;
 
             employee.BaseSalary *= 1.10M;
+
             Console.WriteLine("new base salary with 10% increase is: " +
                 $"{employee.BaseSalary:C}");
+
+                
          }
 
          Console.WriteLine($"earned: {currentEmployee.Earnings():C}\n");
       }
+
+      
 
       // get type name of each object in employees 
       for (int j = 0; j < employees.Count; j++)
