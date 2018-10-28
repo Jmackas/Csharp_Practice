@@ -25,7 +25,7 @@ namespace LabTest2
             string FileName = "Employee.txt";
 
             // Creation of new employee object
-            Purchase RandomPurchase = new Purchase();
+            Purchase purch = new Purchase();
 
             // Invocation of file reader
             FileStream outFile = new FileStream(FileName, FileMode.Create, FileAccess.ReadWrite);
@@ -33,17 +33,17 @@ namespace LabTest2
 
             // Reading items from 
             Console.WriteLine("Enter Employee  Last Name or END to quit");
-            RandomPurchase.SupplierCode = Console.ReadLine();
+            purch.SupplierCode = Console.ReadLine();
 
-            while (RandomPurchase.SupplierCode != "END")
+            while (purch.SupplierCode != "END")
             {
                 Console.WriteLine("Enter first name ");
-                RandomPurchase.ItemCode = Console.ReadLine();
+                purch.ItemCode = Console.ReadLine();
                 Console.WriteLine("Enter next employee last name or END to quit ");
-                RandomPurchase.SupplierCode = Console.ReadLine();
+                purch.SupplierCode = Console.ReadLine();
 
 
-                writer.WriteLine(RandomPurchase.SupplierCode + delim + RandomPurchase.ItemCode);
+                writer.WriteLine(purch.SupplierCode + delim + purch.ItemCode);
             }
             writer.Close();
             outFile.Close();
@@ -81,9 +81,9 @@ namespace LabTest2
                 while (input != null)
                 {
                     fields = input.Split(delim);
-                    RandomPurchase.SupplierCode = fields[0];
-                    RandomPurchase.ItemCode = fields[1];
-                    Console.WriteLine(RandomPurchase);
+                    purch.SupplierCode = fields[0];
+                    purch.ItemCode = fields[1];
+                    Console.WriteLine(purch);
                     input = reader.ReadLine();
                 }
 
