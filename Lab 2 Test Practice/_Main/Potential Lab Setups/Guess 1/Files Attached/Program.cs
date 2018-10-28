@@ -53,7 +53,7 @@ namespace LabTest2
                     purch.CostPerUnit = Convert.ToDouble(Console.ReadLine());
                     Console.WriteLine("Enter Quantity: ");
                     purch.Quantity = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Enter Cash Discount: ");
+                    Console.WriteLine("Enter Discount (eg 0.1 for 10%): ");
                     purch.Discount = Convert.ToDouble(Console.ReadLine());
                 }
                 catch
@@ -62,8 +62,6 @@ namespace LabTest2
                     Console.ReadLine();
                     Environment.Exit(0);
                 }
-                //Calculate Discount
-                // discountRate = purch.Discount * 100;
 
                 //Calculate cost
                 saleTotal = purch.calculateCost();
@@ -122,7 +120,7 @@ namespace LabTest2
                     Console.WriteLine("Item Code:" + purch.ItemCode);
                     Console.WriteLine("Cost per Unit: $" + purch.CostPerUnit);
                     Console.WriteLine("Quantity:" + purch.Quantity);
-                    Console.WriteLine("Cash Sale Discount: $" + purch.Discount);
+                    Console.WriteLine("Discount:" + purch.Discount);
                     //write total sales
                     Console.WriteLine("Sales Total: $" + saleRead);
                     input = reader.ReadLine();

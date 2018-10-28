@@ -64,9 +64,7 @@ namespace LabTest2
 
         public virtual double calculateCost()
         {
-
-            return Quantity * CostPerUnit;
-            
+            return Quantity * CostPerUnit;   
         }
 
         public override string ToString()
