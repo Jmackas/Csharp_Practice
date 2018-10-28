@@ -24,8 +24,6 @@ namespace LabTest2
             // Create new object using template
             CashPurchase purch = new CashPurchase();
 
-
-
             /*===========================
             * 
             * Create file
