@@ -64,7 +64,7 @@ namespace LabTest2
 
                 saleTotal = pur.calculateCost();
 
-                //write to file
+                // Write to file with the delimiter added
                 writer.WriteLine(pur.SupplierCode + delim + pur.ItemCode + delim + pur.CostPerUnit + delim + pur.Quantity + delim + pur.Discount + delim + saleTotal);
                 Console.WriteLine("Enter Supplier Code or END to quit: ");
                 pur.SupplierCode = Console.ReadLine();
@@ -97,7 +97,7 @@ namespace LabTest2
             string input = "";
             string[] fields;
 
-            Console.WriteLine("\n{0,-30}{1,-20}{2,20}{3,30}{4,40}\n", "Supplier Code", "Item Code", "Item Cost Per Unit", "Item Quanitiy", "Sale total $");
+           // Console.WriteLine("\n{0,-30}{1,-20}{2,20}{3,30}{4,40}\n", "Supplier Code", "Item Code", "Item Cost Per Unit", "Item Quanitiy", "Sale total $");
 
             while (input != null)
             {
