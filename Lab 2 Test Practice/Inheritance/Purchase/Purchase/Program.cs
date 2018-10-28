@@ -10,7 +10,7 @@ namespace BentleyLabTest2Alt
     {
         static void Main(string[] args)
         {
-            //Varible for total purchase
+            //Variables for total purchase
             double totalCashPurchases = 0;
             double totalCreditPurchase = 0;
             double discountRate = 0;
