@@ -1,68 +1,77 @@
-﻿// Fig. 12.7: CommissionEmployee.cs
-// CommissionEmployee class that extends Employee.
+﻿// Fig. 12.6: HourlyEmployee.cs
+// HourlyEmployee class that extends Employee.
 using System;
 
-public class CommissionEmployee : Employee
+public class HourlyEmployee : Employee
 {
-   private decimal grossSales; // gross weekly sales
-   private decimal commissionRate; // commission percentage
+   private decimal wage; // wage per hour
+   private decimal hours; // hours worked for the week
 
    // five-parameter constructor
-   public CommissionEmployee(string firstName, string lastName,
-      string socialSecurityNumber, decimal grossSales,
-      decimal commissionRate, string birthDate)
-      : base(firstName, lastName, socialSecurityNumber, birthDate)
+   public HourlyEmployee(string firstName, string lastName,
+      string socialSecurityNumber, decimal hourlyWage,
+      decimal hoursWorked)
+      : base(firstName, lastName, socialSecurityNumber)
    {
-      GrossSales = grossSales; // validates gross sales
-      CommissionRate = commissionRate; // validates commission rate
+      Wage = hourlyWage; // validate hourly wage 
+      Hours = hoursWorked; // validate hours worked 
    }
 
-   // property that gets and sets commission employee's gross sales
-   public decimal GrossSales
+   // property that gets and sets hourly employee's wage
+   public decimal Wage
    {
       get
       {
-         return grossSales;
+         return wage;
       }
       set
       {
          if (value < 0) // validation
          {
             throw new ArgumentOutOfRangeException(nameof(value),
-               value, $"{nameof(GrossSales)} must be >= 0");
+               value, $"{nameof(Wage)} must be >= 0");
          }
 
-         grossSales = value;
+         wage = value;
       }
    }
 
-   // property that gets and sets commission employee's commission rate
-   public decimal CommissionRate
+   // property that gets and sets hourly employee's hours
+   public decimal Hours
    {
       get
       {
-         return commissionRate;
+         return hours;
       }
       set
       {
-         if (value <= 0 || value >= 1) // validation
+         if (value < 0 || value > 168) // validation
          {
             throw new ArgumentOutOfRangeException(nameof(value),
-               value, $"{nameof(CommissionRate)} must be > 0 and < 1");
+               value, $"{nameof(Hours)} must be >= 0 and <= 168");
          }
 
-         commissionRate = value;
+         hours = value;
       }
    }
 
-   // calculate earnings; override abstract method Earnings in Employee
-   public override decimal Earnings() => CommissionRate * GrossSales;
+   // calculate earnings; override Employee’s abstract method Earnings
+   public override decimal Earnings()
+   {
+      if (Hours <= 40) // no overtime                          
+      {
+         return Wage * Hours;
+      }
+      else
+      {
+         return (40 * Wage) + ((Hours - 40) * Wage * 1.5M);
+      }
+   }
 
-   // return string representation of CommissionEmployee object
+   // return string representation of HourlyEmployee object
    public override string ToString() =>
-      $"commission employee: {base.ToString()}\n" +
-      $"gross sales: {GrossSales:C}\n" +
-      $"commission rate: {CommissionRate:F2}";
+      $"hourly employee: {base.ToString()}\n" +
+      $"hourly wage: {Wage:C}\nhours worked: {Hours:F2}";
 }
 
 

@@ -8,8 +8,8 @@ public class SalariedEmployee : Employee
 
    // four-parameter constructor
    public SalariedEmployee(string firstName, string lastName,
-      string socialSecurityNumber, decimal weeklySalary, string birthDate)
-      : base(firstName, lastName, socialSecurityNumber, birthDate)
+      string socialSecurityNumber, decimal weeklySalary)
+      : base(firstName, lastName, socialSecurityNumber)
    {
       WeeklySalary = weeklySalary; // validate salary via property
    }
