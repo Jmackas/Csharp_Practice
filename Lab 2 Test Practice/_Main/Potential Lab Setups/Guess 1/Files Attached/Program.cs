@@ -11,40 +11,65 @@ namespace LabTest2
     {
         static void Main(string[] args)
         {
+            //"CashPurchase"Writing Contents to file / default location
 
-            /*=========================
-             * 
-             * Writing to the file
-             * 
-             * ======================*/
-
-            //writing to the file ; default location used
             char delim = ',';
+            double saleTotal;
 
-            // String used
-            string FileName = "Employee.txt";
+            //Set file name
+            string Filename = "CashPurchases.txt";
 
-            // Creation of new employee object
-            Purchase purch = new Purchase();
+            // Create new object using template
+            CashPurchase pur = new CashPurchase();
 
-            // Invocation of file reader
-            FileStream outFile = new FileStream(FileName, FileMode.Create, FileAccess.ReadWrite);
+            /*===========================
+            * 
+            * Create file
+            * 
+            * =========================*/
+
+            //Create File
+            FileStream outFile = new FileStream(Filename, FileMode.Create, FileAccess.ReadWrite);
             StreamWriter writer = new StreamWriter(outFile);
+            Console.WriteLine("Cash Purchase transaction");
+            Console.WriteLine("Enter Supplier Code or END to quit: ");
+            pur.SupplierCode = Console.ReadLine();
 
-            // Reading items from 
-            Console.WriteLine("Enter Employee  Last Name or END to quit");
-            purch.SupplierCode = Console.ReadLine();
-
-            while (purch.SupplierCode != "END")
+            while (pur.SupplierCode != "END")
             {
-                Console.WriteLine("Enter first name ");
-                purch.ItemCode = Console.ReadLine();
-                Console.WriteLine("Enter next employee last name or END to quit ");
-                purch.SupplierCode = Console.ReadLine();
+                // For all string inputs
+                Console.WriteLine("Enter Supplier Code: ");
+                pur.SupplierCode = Console.ReadLine();
+                Console.WriteLine("Enter Item Code; ");
+                pur.ItemCode = Console.ReadLine();
 
+                // For all double inputs
+                try
+                {
+                    Console.WriteLine("Enter Cost Per Unit: ");
+                    pur.CostPerUnit = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Enter Quantity: ");
+                    pur.Quantity = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Enter Cash Discount");
+                    pur.Discount = Convert.ToDouble(Console.ReadLine());
+                }
 
-                writer.WriteLine(purch.SupplierCode + delim + purch.ItemCode);
+                // Validating the entered data
+                catch
+                {
+                    Console.WriteLine("Please only enter numeric values.");
+                    Console.ReadLine();
+                    Environment.Exit(0);
+                }
+
+                saleTotal = pur.calculateCost();
+
+                //write to file
+                writer.WriteLine(pur.SupplierCode + delim + pur.ItemCode + delim + pur.CostPerUnit + delim + pur.Quantity + delim + pur.Discount + delim + saleTotal);
+                Console.WriteLine("Enter Supplier Code or END to quit: ");
+                pur.SupplierCode = Console.ReadLine();
             }
+
             writer.Close();
             outFile.Close();
 
@@ -60,20 +85,19 @@ namespace LabTest2
 
 
 
+           /*===========================
+            * 
+            * Read from file
+            * 
+            * =========================*/
+            Console.WriteLine("Reading from file");
 
-
-
-            // Reading the previously created file
-            Console.WriteLine("Reading from the file");
-
-            FileStream inFile = new FileStream(FileName,
-                     FileMode.Open, FileAccess.Read);
+            FileStream inFile = new FileStream(Filename, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(inFile);
             string input = "";
             string[] fields;
 
-            Console.WriteLine("\n{0,-15}{1,-12}{2,8}\n",
-                    "LastName", "FirstName", "EmployeeID");
+            Console.WriteLine("\n{0,-30}{1,-20}{2,20}{3,30}{4,40}\n", "Supplier Code", "Item Code", "Item Cost Per Unit", "Item Quanitiy", "Sale total $");
 
             while (input != null)
             {
@@ -81,15 +105,18 @@ namespace LabTest2
                 while (input != null)
                 {
                     fields = input.Split(delim);
-                    purch.SupplierCode = fields[0];
-                    purch.ItemCode = fields[1];
-                    Console.WriteLine(purch);
+                    pur.SupplierCode = fields[0];
+                    pur.ItemCode = fields[1];
+                    pur.CostPerUnit = Convert.ToDouble(fields[2]);
+                    pur.Quantity = Convert.ToDouble(fields[3]);
+                    pur.Discount = Convert.ToDouble(fields[4]);
+                    saleTotal = Convert.ToDouble(fields[5]);
+                    Console.WriteLine(pur);
                     input = reader.ReadLine();
                 }
-
             }
-            reader.Close();  // Error occurs if
-            inFile.Close(); //these two statements are reversed
+            reader.Close();
+            inFile.Close();
 
             Console.ReadLine();
         }
