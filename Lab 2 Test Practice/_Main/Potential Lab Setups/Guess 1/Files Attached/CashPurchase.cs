@@ -42,7 +42,7 @@ namespace LabTest2
         public override double calculateCost()
         {
             double cost = base.calculateCost();
-            double netCost = cost * Discount;
+            double netCost = cost - cost * Discount;
             return netCost;
         } // end function calculateCost
 
