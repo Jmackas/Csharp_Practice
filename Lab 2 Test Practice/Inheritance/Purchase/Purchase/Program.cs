@@ -10,12 +10,14 @@ namespace BentleyLabTest2Alt
     {
         static void Main(string[] args)
         {
-            Purchase purchase = new Purchase("test", "esketit", 1.0, 8.9);
+            Purchase purchase = new Purchase("test", "esketit", -2.0, -8);
 
             Console.WriteLine(purchase.Quantity);
-            Console.WriteLine(purchase.Quantity);
-            Console.WriteLine(purchase.Quantity);
-            Console.WriteLine(purchase.Quantity);
+            Console.WriteLine(purchase.CostPerUnit);
+            Console.WriteLine(purchase.SupplierCode);
+            Console.WriteLine(purchase.ItemCode);
+
+            Console.WriteLine(purchase.calculateCost());
 
         }
     }
