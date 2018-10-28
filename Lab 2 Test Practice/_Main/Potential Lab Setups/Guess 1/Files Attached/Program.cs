@@ -14,7 +14,7 @@ namespace LabTest2
             //"CashPurchase"Writing Contents to file / default location
 
             char delim = ',';
-            
+
             // Variables to determine net sales
             double netSalesWrite;
             double netSalesRead;
@@ -27,6 +27,7 @@ namespace LabTest2
             Console.WriteLine("Are you buying on 'cash' or 'credit'? (please type the corresponding code)");
             cashOrCredit = Console.ReadLine();
 
+            // If-else statement for cash or credit purchase
             if (cashOrCredit == "cash")
             {
                 CashPurchase purch = new CashPurchase();
@@ -34,10 +35,10 @@ namespace LabTest2
 
 
                 /*===========================
-           * 
-           * Create file
-           * 
-           * =========================*/
+                 * 
+                 * Create file
+                 * 
+                 * =========================*/
 
                 //Create File
                 FileStream outFile = new FileStream(Filename, FileMode.Create, FileAccess.ReadWrite);
@@ -145,22 +146,22 @@ namespace LabTest2
 
 
 
+            
 
-
-            else
+            else if (cashOrCredit == "credit")
             {
-                CashPurchase purch = new CashPurchase();
+                CreditPurchase purch = new CreditPurchase();
 
                 /*===========================
-           * 
-           * Create file
-           * 
-           * =========================*/
+                 * 
+                 * Create file
+                 * 
+                 * =========================*/
 
                 //Create File
                 FileStream outFile = new FileStream(Filename, FileMode.Create, FileAccess.ReadWrite);
                 StreamWriter writer = new StreamWriter(outFile);
-                Console.WriteLine("Cash Purchase transaction");
+                Console.WriteLine("Credit Purchase transaction");
                 Console.WriteLine("Enter Supplier Code or END to quit: ");
                 purch.SupplierCode = Console.ReadLine();
 
@@ -178,8 +179,6 @@ namespace LabTest2
                         purch.CostPerUnit = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Enter Quantity: ");
                         purch.Quantity = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine("Enter Discount (eg 0.1 for 10%): ");
-                        purch.Discount = Convert.ToDouble(Console.ReadLine());
                     }
                     catch
                     {
@@ -192,7 +191,7 @@ namespace LabTest2
                     netSalesWrite = purch.calculateCost();
 
                     //write to file
-                    writer.WriteLine(purch.SupplierCode + delim + purch.ItemCode + delim + purch.CostPerUnit + delim + purch.Quantity + delim + purch.Discount + delim + netSalesWrite);
+                    writer.WriteLine(purch.SupplierCode + delim + purch.ItemCode + delim + purch.CostPerUnit + delim + purch.Quantity + delim + netSalesWrite);
 
                     // Closure of program
                     Console.WriteLine("Enter Another Supplier Code or END to quit: ");
@@ -236,7 +235,6 @@ namespace LabTest2
                         purch.ItemCode = fields[1];
                         purch.CostPerUnit = Convert.ToDouble(fields[2]);
                         purch.Quantity = Convert.ToDouble(fields[3]);
-                        purch.Discount = Convert.ToDouble(fields[4]);
                         netSalesRead = Convert.ToDouble(fields[5]);
 
 
@@ -245,7 +243,6 @@ namespace LabTest2
                         Console.WriteLine("Item Code:" + purch.ItemCode);
                         Console.WriteLine("Cost per Unit: $" + purch.CostPerUnit);
                         Console.WriteLine("Quantity:" + purch.Quantity);
-                        Console.WriteLine("Discount:" + purch.Discount);
                         //write total sales
                         Console.WriteLine("Sales Total: $" + netSalesRead);
                         input = reader.ReadLine();
@@ -258,7 +255,7 @@ namespace LabTest2
             }
 
 
-           
+
         }
     }
 }
