@@ -21,9 +21,6 @@ namespace LabTest2
             double netSalesRead;
             string cashOrCredit;
 
-            //Set file name
-            string Filename = "CashPurchases.txt";
-
             // Create new object using template
             Console.WriteLine("Are you buying on 'cash' or 'credit'? (please type the corresponding code)");
             cashOrCredit = Console.ReadLine();
@@ -31,6 +28,9 @@ namespace LabTest2
             // If-else statement for cash or credit purchase
             if (cashOrCredit == "cash")
             {
+                //Set file name
+                string Filename = "CashPurchases.txt";
+
                 CashPurchase purch = new CashPurchase();
 
 
@@ -151,6 +151,10 @@ namespace LabTest2
 
             else if (cashOrCredit == "credit")
             {
+
+                //Set file name
+                string Filename = "CreditPurchases.txt";
+
                 CreditPurchase purch = new CreditPurchase();
 
                 /*===========================
