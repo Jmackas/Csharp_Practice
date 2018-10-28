@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasePlusCommissionEmployee.cs" />
+    <Compile Include="Date.cs" />
     <Compile Include="PayrollSystemTest.cs" />
     <Compile Include="CommissionEmployee.cs" />
     <Compile Include="HourlyEmployee.cs" />
