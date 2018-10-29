@@ -36,7 +36,7 @@ namespace LabTest2
 
         public override double calculateCost()
         {
-            return (Quantity * CostPerUnit) - calculateCostofCharges();
+            return (Quantity * CostPerUnit) + calculateCostofCharges();
         }
 
         public double calculateCostofCharges()
