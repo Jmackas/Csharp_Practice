@@ -22,6 +22,7 @@ namespace LabTest2
             double netCreditWrite;
             double netCreditRead;
             string cashOrCredit;
+            double creditCharge;
 
             // Create new object using template
             Console.WriteLine("Are you buying on 'cash' or 'credit'? (please type the corresponding code)");
@@ -183,7 +184,8 @@ namespace LabTest2
                     }
 
                     //Calculate cost
-                    netCreditWrite = cashPurch.calculateCostofCharges();
+                    creditCharge = cashPurch.calculateCostofCharges();
+                    netCreditWrite = cashPurch.calculateCost() ;
 
                     //write to file
                     writer.WriteLine(cashPurch.SupplierCode + delim + cashPurch.ItemCode + delim + cashPurch.CostPerUnit + delim + cashPurch.Quantity + delim + netCreditWrite);
