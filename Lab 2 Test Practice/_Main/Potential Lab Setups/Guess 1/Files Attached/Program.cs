@@ -25,6 +25,12 @@ namespace LabTest2
             Console.WriteLine("Are you buying on 'cash' or 'credit'? (please type the corresponding code)");
             cashOrCredit = Console.ReadLine();
 
+            /*==============================
+             * 
+             * Cash Purchase
+             * 
+             * =============================*/
+
             // If-else statement for cash or credit purchase
             if (cashOrCredit == "cash")
             {
@@ -35,12 +41,7 @@ namespace LabTest2
 
 
 
-                /*===========================
-                 * 
-                 * Create file
-                 * 
-                 * =========================*/
-
+                /*========== Create file ==========*/
                 //Create File
                 FileStream outFile = new FileStream(Filename, FileMode.Create, FileAccess.ReadWrite);
                 StreamWriter writer = new StreamWriter(outFile);
@@ -88,21 +89,7 @@ namespace LabTest2
 
 
 
-
-
-
-
-
-
-
-
-
-
-                /*===========================
-                 * 
-                 * Read from file
-                 * 
-                 * =========================*/
+                /*========== Read from file ==========*/
                 Console.WriteLine("Reading from file");
 
                 FileStream inFile = new FileStream(Filename, FileMode.Open, FileAccess.Read);
@@ -147,8 +134,12 @@ namespace LabTest2
 
 
 
-            
 
+            /*==============================
+             * 
+             * Credit Purchase
+             * 
+             * =============================*/
             else if (cashOrCredit == "credit")
             {
 
@@ -157,12 +148,7 @@ namespace LabTest2
 
                 CreditPurchase purch = new CreditPurchase();
 
-                /*===========================
-                 * 
-                 * Create file
-                 * 
-                 * =========================*/
-
+                /*========== Create file ==========*/
                 //Create File
                 FileStream outFile = new FileStream(Filename, FileMode.Create, FileAccess.ReadWrite);
                 StreamWriter writer = new StreamWriter(outFile);
@@ -184,6 +170,8 @@ namespace LabTest2
                         purch.CostPerUnit = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Enter Quantity: ");
                         purch.Quantity = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Enter Credit Charge (eg 0.1 for 10%): ");
+                        purch.CreditCharge = Convert.ToDouble(Console.ReadLine());
                     }
                     catch
                     {
@@ -207,22 +195,7 @@ namespace LabTest2
                 outFile.Close();
 
 
-
-
-
-
-
-
-
-
-
-
-
-                /*===========================
-                 * 
-                 * Read from file
-                 * 
-                 * =========================*/
+                /*========== Read from file ==========*/
                 Console.WriteLine("Reading from file");
 
                 FileStream inFile = new FileStream(Filename, FileMode.Open, FileAccess.Read);
