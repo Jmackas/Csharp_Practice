@@ -149,7 +149,7 @@ namespace LabTest2
                 //Set file name
                 string Filename = "CreditPurchases.txt";
 
-                CreditPurchase cashPurch = new CreditPurchase();
+                CreditPurchase creditPurch = new CreditPurchase();
 
                 /*========== Create file ==========*/
                 //Create File
@@ -157,24 +157,24 @@ namespace LabTest2
                 StreamWriter writer = new StreamWriter(outFile);
                 Console.WriteLine("Credit Purchase transaction");
                 Console.WriteLine("Enter Supplier Code or END to quit: ");
-                cashPurch.SupplierCode = Console.ReadLine();
+                creditPurch.SupplierCode = Console.ReadLine();
 
-                while (cashPurch.SupplierCode != "END")
+                while (creditPurch.SupplierCode != "END")
                 {
                     //Console.WriteLine("Enter Supplier Code: ");
                     //purch.SupplierCode = Console.ReadLine();
                     Console.WriteLine("Enter Item Code: ");
-                    cashPurch.ItemCode = Console.ReadLine();
+                    creditPurch.ItemCode = Console.ReadLine();
 
                     //read double
                     try
                     {
                         Console.WriteLine("Enter Cost Per Unit: ");
-                        cashPurch.CostPerUnit = Convert.ToDouble(Console.ReadLine());
+                        creditPurch.CostPerUnit = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Enter Quantity: ");
-                        cashPurch.Quantity = Convert.ToDouble(Console.ReadLine());
+                        creditPurch.Quantity = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Enter Credit Charge (eg 0.1 for 10%): ");
-                        cashPurch.CreditCharge = Convert.ToDouble(Console.ReadLine());
+                        creditPurch.CreditCharge = Convert.ToDouble(Console.ReadLine());
                     }
                     catch
                     {
@@ -184,15 +184,15 @@ namespace LabTest2
                     }
 
                     //Calculate cost
-                    creditCharge = cashPurch.calculateCostofCharges();
-                    netCreditWrite = cashPurch.calculateCost() ;
+                    creditCharge = creditPurch.calculateCostofCharges();
+                    netCreditWrite = creditPurch.calculateCost() ;
 
                     //write to file
-                    writer.WriteLine(cashPurch.SupplierCode + delim + cashPurch.ItemCode + delim + cashPurch.CostPerUnit + delim + cashPurch.Quantity + delim + netCreditWrite);
+                    writer.WriteLine(creditPurch.SupplierCode + delim + creditPurch.ItemCode + delim + creditPurch.CostPerUnit + delim + creditPurch.Quantity + delim + netCreditWrite);
 
                     // Closure of program
                     Console.WriteLine("Enter Another Supplier Code or END to quit: ");
-                    cashPurch.SupplierCode = Console.ReadLine();
+                    creditPurch.SupplierCode = Console.ReadLine();
                 }
 
                 writer.Close();
@@ -213,18 +213,18 @@ namespace LabTest2
                     while (input != null)
                     {
                         fields = input.Split(delim);
-                        cashPurch.SupplierCode = fields[0];
-                        cashPurch.ItemCode = fields[1];
-                        cashPurch.CostPerUnit = Convert.ToDouble(fields[2]);
-                        cashPurch.Quantity = Convert.ToDouble(fields[3]);
+                        creditPurch.SupplierCode = fields[0];
+                        creditPurch.ItemCode = fields[1];
+                        creditPurch.CostPerUnit = Convert.ToDouble(fields[2]);
+                        creditPurch.Quantity = Convert.ToDouble(fields[3]);
                         netCreditRead = Convert.ToDouble(fields[4]);
 
 
                         // Display on console
-                        Console.WriteLine("Supplier Code: " + cashPurch.SupplierCode);
-                        Console.WriteLine("Item Code:" + cashPurch.ItemCode);
-                        Console.WriteLine("Cost per Unit: $" + cashPurch.CostPerUnit);
-                        Console.WriteLine("Quantity:" + cashPurch.Quantity);
+                        Console.WriteLine("Supplier Code: " + creditPurch.SupplierCode);
+                        Console.WriteLine("Item Code:" + creditPurch.ItemCode);
+                        Console.WriteLine("Cost per Unit: $" + creditPurch.CostPerUnit);
+                        Console.WriteLine("Quantity:" + creditPurch.Quantity);
                         //write total sales
                         Console.WriteLine("Sales Total: $" + netCreditRead);
                         input = reader.ReadLine();
